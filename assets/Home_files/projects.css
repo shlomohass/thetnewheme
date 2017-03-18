@@ -1,0 +1,406 @@
+/*
+
+	Projects.css
+
+	01. Projects overview
+	02. Single project
+	03. Responsive settings
+
+*/
+
+/* ==================== 01. Projects overview ==================== */
+.projects {
+	padding-top: 100px;
+	padding-bottom: 120px;
+	background: #ffffff;
+}
+
+/* Styles for the mixitup filter */
+#mix-container .mix {
+	display: none;
+}
+
+.filter {
+	cursor: pointer;
+	display: inline-block;
+	padding: 10px 20px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	color: #999999;
+	background: #ffffff;
+	border: 1px solid #eeeeee;
+	-webkit-border-radius: 3px;
+			border-radius: 3px;
+	-webkit-transition: all .2s;
+	   -moz-transition: all .2s;
+		-ms-transition: all .2s;
+		 -o-transition: all .2s;
+			transition: all .2s;
+}
+
+.no-touch .filter:hover {
+	color: #777777;
+	background: #eeeeee;
+	border: 1px solid #eeeeee;
+	-webkit-transition: all .2s;
+	   -moz-transition: all .2s;
+		-ms-transition: all .2s;
+		 -o-transition: all .2s;
+			transition: all .2s;
+}
+
+.filter.active {
+	color: #ffffff;
+	background: #f33233;
+	border: 1px solid #f33233;
+}
+
+/* Project link */
+.p-link {
+	overflow: hidden;
+	background: #333333;
+	-webkit-backface-visibility: hidden;
+	 -khtml-backface-visibility: hidden;
+	 -apple-backface-visibility: hidden;
+	   -moz-backface-visibility: hidden;
+		-ms-backface-visibility: hidden;
+		 -o-backface-visibility: hidden;
+			backface-visibility: hidden;
+	-webkit-transform: translateZ(0) scale(1.0, 1.0);
+	 -khtml-transform: translateZ(0) scale(1.0, 1.0);
+	 -apple-transform: translateZ(0) scale(1.0, 1.0);
+	   -moz-transform: translateZ(0) scale(1.0, 1.0);
+		-ms-transform: translateZ(0) scale(1.0, 1.0);
+		 -o-transform: translateZ(0) scale(1.0, 1.0);
+			transform: translateZ(0) scale(1.0, 1.0);
+}
+
+.p-link img {
+	vertical-align: bottom;
+	-webkit-backface-visibility: hidden;
+	 -khtml-backface-visibility: hidden;
+	 -apple-backface-visibility: hidden;
+	   -moz-backface-visibility: hidden;
+		-ms-backface-visibility: hidden;
+		 -o-backface-visibility: hidden;
+			backface-visibility: hidden;
+	-webkit-transform: translateZ(0) scale(1.0, 1.0);
+	 -khtml-transform: translateZ(0) scale(1.0, 1.0);
+	 -apple-transform: translateZ(0) scale(1.0, 1.0);
+	   -moz-transform: translateZ(0) scale(1.0, 1.0);
+		-ms-transform: translateZ(0) scale(1.0, 1.0);
+		 -o-transform: translateZ(0) scale(1.0, 1.0);
+			transform: translateZ(0) scale(1.0, 1.0);
+	-webkit-transition: all .2s;
+	   -moz-transition: all .2s;
+		-ms-transition: all .2s;
+		 -o-transition: all .2s;
+			transition: all .2s;
+}
+
+.p-link i {
+	filter: alpha(opacity=0);
+	opacity: 0;
+	z-index: 40;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -50px;
+	margin-left: -25px;
+	width: 50px;
+	height: 50px;
+	line-height: 48px;
+	font-size: 14px;
+	text-align: center;
+	color: #ffffff;
+	border: 2px solid #ffffff;
+	-webkit-border-radius: 25px;
+			border-radius: 25px;
+	-webkit-transition: all .2s;
+	   -moz-transition: all .2s;
+		-ms-transition: all .2s;
+		 -o-transition: all .2s;
+			transition: all .2s;
+}
+
+.no-touch .p-link a:hover > img {
+	filter: alpha(opacity=50);
+	opacity: 0.5;
+	-webkit-transition: all .2s;
+	   -moz-transition: all .2s;
+		-ms-transition: all .2s;
+		 -o-transition: all .2s;
+			transition: all .2s;
+}
+
+.no-touch .p-link a:hover > i {
+	filter: alpha(opacity=100);
+	opacity: 1;
+	-webkit-transition: all .2s;
+	   -moz-transition: all .2s;
+		-ms-transition: all .2s;
+		 -o-transition: all .2s;
+			transition: all .2s;
+}
+
+.p-link b {
+	display: block;
+	padding-top: 15px;
+	color: #777777;
+	background: #ffffff;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 20px;
+	-webkit-transition: all .2s;
+	   -moz-transition: all .2s;
+		-ms-transition: all .2s;
+		 -o-transition: all .2s;
+			transition: all .2s;
+}
+
+.p-link em {
+	display: block;
+	background: #ffffff;
+	font-style: normal;
+	line-height: 20px;
+}
+
+.no-touch .p-link a:hover > b {
+	color: #111111;
+	-webkit-transition: all .2s;
+	   -moz-transition: all .2s;
+		-ms-transition: all .2s;
+		 -o-transition: all .2s;
+			transition: all .2s;
+}
+
+
+/* ==================== 02. Single project ==================== */
+.project {
+	padding-top: 120px;
+	padding-bottom: 120px;
+	background: #ffffff;
+}
+
+.project-post,
+.project-body {
+	margin-bottom: 50px;
+}
+
+/* Project media */
+.project-media {
+	margin-bottom: 35px;
+}
+
+.project-media.alternative {
+	margin-bottom: 50px;
+}
+
+.project-media img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: bottom;
+}
+
+/* Project review */
+.project-review {
+	margin-bottom: 50px;
+}
+
+.pr-quote {
+	float: left;
+	display: block;
+}
+
+.pr-quote i {
+	text-align: left;
+	font-size: 28px;
+	line-height: 20px;
+	color: #999999;
+}
+
+.pr-text {
+	display: block;
+	margin-left: 40px;
+}
+
+.pr-text h3 {
+	display: inline;
+	margin-right: 10px;
+}
+
+.pr-text i {
+	color: #f33233;
+	font-size: 14px;
+}
+
+.pr-text p {
+	font-style: italic;
+}
+
+/* Other projects */
+.other-projects {
+	margin-top: 75px;
+}
+
+.other-projects hr {
+	width: 100%;
+	height: 1px;
+	background: #eeeeee;
+	margin-top: 15px;
+	margin-bottom: 40px;
+}
+
+.op-link a {
+	display: block;
+	line-height: 20px;
+}
+
+.op-link img {
+	margin-bottom: 15px;
+	-webkit-transition: all .2s;
+	   -moz-transition: all .2s;
+		-ms-transition: all .2s;
+		 -o-transition: all .2s;
+			transition: all .2s;
+}
+
+.op-link b {
+	display: block;
+	color: #777777;
+	font-size: 14px;
+	font-weight: 700;
+	-webkit-transition: all .2s;
+	   -moz-transition: all .2s;
+		-ms-transition: all .2s;
+		 -o-transition: all .2s;
+			transition: all .2s;
+}
+
+.op-link em {
+	display: block;
+	font-style: normal;
+}
+
+.no-touch .op-link a:hover > b {
+	color: #111111;
+	-webkit-transition: all .2s;
+	   -moz-transition: all .2s;
+		-ms-transition: all .2s;
+		 -o-transition: all .2s;
+			transition: all .2s;
+}
+
+/* Project widget */
+.project-widget {
+	margin-bottom: 50px;
+}
+
+.project-widget h3 {
+	padding-bottom: 10px;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #eeeeee;
+}
+
+/* Project details */
+.project-details {
+	background: #f9f9f9;
+	border-top: 1px solid #eeeeee;
+	border-right: 1px solid #eeeeee;
+	border-left: 1px solid #eeeeee;
+	margin-bottom: 50px;
+}
+
+.project-details h3 {
+	display: block;
+	background: #ffffff;
+	padding: 20px 25px;
+	border-bottom: 1px solid #eeeeee;
+}
+
+.project-details ul li {
+	display: block;
+	padding: 20px 25px;
+	border-bottom: 1px solid #eeeeee;
+}
+
+.project-details ul li i {
+	display: block;
+	float: left;
+	width: 25px;
+	height: 25px;
+	line-height: 25px;
+	font-size: 14px;
+	text-align: left;
+}
+
+.project-details ul li h5,
+.project-details ul li p {
+	padding-left: 25px;
+	margin-bottom: 0;
+}
+
+/* Project tags */
+.project-widget .tagcloud a {
+	display: inline-block;
+	font-size: 13px;
+	padding: 3px 10px 4px;
+	color: #aaaaaa;
+	background: none;
+	margin-bottom: 3px;
+	-webkit-border-radius: 3px;
+			border-radius: 3px;
+}
+
+.no-touch .project-widget .tagcloud a:hover {
+	color: #777777;
+	background: #f7f7f7;
+}
+
+
+/* ==================== 03. Responsive settings ==================== */
+@media only screen and (max-width: 1024px) {
+
+	.project,
+	.projects {
+		padding-top: 80px;
+		padding-bottom: 100px;
+	}
+
+}
+
+@media only screen and (max-width: 768px) {
+
+	.projects {
+		padding-top: 60px;
+		padding-bottom: 80px;
+	}
+
+	.project {
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+
+	.project-sidebar {
+		margin-top: 60px;
+	}
+
+}
+
+@media only screen and (max-width: 480px) {
+
+	.projects {
+		padding-top: 40px;
+		padding-bottom: 60px;
+	}
+
+	.project {
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+
+	.project-sidebar {
+		margin-top: 40px;
+	}
+
+}

@@ -1,0 +1,358 @@
+/*
+
+	Main.js
+
+	01. Menu toggle
+	02. Fixed menu
+	03. Process slider
+	04. Employee slider
+	05. Grab function
+	06. Quote slider
+	07. Image slider
+	08. Contact form
+	09. Scrollto
+	10. Magnific popup
+	11. Equal height
+	12. fitVids
+	13. BigText
+
+*/
+
+
+(function($){
+	"use strict";
+
+
+	/* ==================== 01. Menu toggle ==================== */
+	$(function(){
+		$('#toggle').click(function (e){
+			e.stopPropagation();
+		});
+		$('html').click(function (e){
+			if (!$('.toggle').is($(e.target))){
+				$('#toggle').prop("checked", false);
+			}
+		});
+	});
+
+
+	/* ==================== 02. Fixed menu ==================== */
+	$(window).load(function(){
+		$(".fixedmenu").sticky({ topSpacing: 0 });
+	});
+
+
+	/* ==================== 03. Process slider ==================== */
+	$(function() {
+	 
+		var owl = $(".process-slider");
+		
+		owl.owlCarousel({
+			pagination: false,
+			navigation: false,
+			items: 3,
+			itemsDesktop: [1000,3],
+			itemsDesktopSmall: [900,2],
+			itemsTablet: [false],
+			itemsMobile: [480,1]
+		});
+	 
+	});
+
+
+	/* ==================== 04. Employee slider ==================== */
+	$(function() {
+	 
+		var owl = $(".employee-slider");
+		
+		owl.owlCarousel({
+			pagination: false,
+			navigation: false,
+			items: 4,
+			itemsDesktop: [1000,4],
+			itemsDesktopSmall: [900,3],
+			itemsTablet: [false],
+			itemsMobile: [480,1]
+		});
+	 
+	});
+
+
+	/* ==================== 05. Grab function ==================== */
+	$(function(){
+		$(".grab").mouseup(function(){
+			$(".grab").css("cursor","grab");
+		}).mousedown(function(){
+			$(".grab").css("cursor","grabbing");
+		}).mouseleave(function(){
+			$(".grab").css("cursor","grab");
+		});
+	});
+
+
+	/* ==================== 06. Quote slider ==================== */
+	$('.quote-slider').bxSlider({
+		mode: 'horizontal',
+		pager: false,
+		controls: true,
+		nextSelector: '.q-next',
+		prevSelector: '.q-prev',
+		nextText: '<i class="fa fa-angle-right"></i>',
+		prevText: '<i class="fa fa-angle-left"></i>',
+		adaptiveHeight: true
+	});
+
+
+	/* ==================== 07. Image slider ==================== */
+	$('.img-slider').bxSlider({
+		mode: 'fade',
+		pager: true,
+		controls: true,
+		nextText: '<i class="bs-right fa fa-angle-right"></i>',
+		prevText: '<i class="bs-left fa fa-angle-left"></i>',
+		adaptiveHeight: true
+	});
+
+	/* ==================== 08. Fullwidth background slider ==================== */
+	$('.fw-bg-slider').bxSlider({
+		mode: 'fade',
+		auto: true,
+		speed: 1500,
+		pause: 5000,
+		pager: false,
+		controls: false,
+		nextText: '<i class="bs-right fa fa-angle-right"></i>',
+		prevText: '<i class="bs-left fa fa-angle-left"></i>'
+	});
+
+
+	/* ==================== 09. Fullwidth background and content slider ==================== */
+	$('.fw-bgc-slider').bxSlider({
+		mode: 'fade',
+		pager: true,
+		controls: true,
+		nextText: '<i class="bs-right fa fa-angle-right"></i>',
+		prevText: '<i class="bs-left fa fa-angle-left"></i>'
+	});
+
+
+
+	/* ==================== 08. Contact form ==================== */
+	$(function(){
+
+		$('#contactform').submit(function(){
+
+			var action = $(this).attr('action');
+
+			var name = $('#name').val();
+			var email = $('#email').val();
+			var message = $('#message').val();
+
+			$('#msg').slideUp(300);
+
+			if(name == ''){
+				$('#msg').html('Please enter your name');
+				$('#msg').slideDown(300);
+				$('#name').focus();
+				return false;
+			}
+
+			if(email == ''){
+				$('#msg').html('Please enter your email');
+				$('#msg').slideDown(300);
+				$('#email').focus();
+				return false;
+			}
+
+			if(message == ''){
+				$('#msg').html('Please enter your message');
+				$('#msg').slideDown(300);
+				$('#message').focus();
+				return false;
+			}
+
+			$('#msg').hide();
+
+			$('#submit')
+				.after('<img src="'+window.baseUrl+'/images/loader.gif" class="loader">')
+				.attr('disabled','disabled');
+
+			$.post(
+				action, 
+
+				$('#contactform').serialize(),
+
+				function(data){
+					$('#msg').html(data.msg);
+					$('#msg').slideDown(300);
+					$('#contactform img.loader').fadeOut(300,function(){$(this).remove()});
+					$('#submit').removeAttr('disabled');
+					if(data.info == 'success') $('#contactform').slideUp(300);
+				},
+				'json'
+			);
+
+			// $('#msg').slideUp(300,function() {
+
+				
+
+			// });
+
+			return false;
+
+		});
+
+	});
+
+
+	/* ==================== 09. Scrollto ==================== */
+	$(function(){
+		$('.scrollto').bind('click.scrollto',function (e){
+			e.preventDefault();
+
+			var target = this.hash,
+			$target = $(target);
+
+			$('html, body').stop().animate({
+				'scrollTop': $target.offset().top-0
+			}, 900, 'swing', function () {
+				window.location.hash = target;
+			});
+		});
+
+
+		
+	});
+
+
+	/* ==================== 10. Magnific popup ==================== */
+	// Image popup
+	$('.popup').magnificPopup({ 
+		type: 'image',
+		fixedContentPos: false,
+		fixedBgPos: false,
+		removalDelay: 300,
+		mainClass: 'mfp-fade'
+	});
+
+	// YouTube, Vimeo and Google Maps popup
+	$('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+		disableOn: 0,
+		type: 'iframe',
+		fixedContentPos: false,
+		fixedBgPos: false,
+		removalDelay: 300,
+		mainClass: 'mfp-fade',
+		preloader: false
+	});
+
+	// Gallery popup
+	$('.popup-gallery').magnificPopup({
+		type: 'image',
+		gallery:{
+			enabled:true
+		},
+		fixedContentPos: false,
+		fixedBgPos: false,
+		removalDelay: 300,
+		mainClass: 'mfp-fade'
+	});
+
+	// Gallery link - Use the gallery-link to create a link to a gallery
+	$('.gallery-link').on('click', function () {
+		$(this).next().magnificPopup('open');
+	});
+
+	// Gallery - Add every image you want to become visible in a popup inside a div with the gallery class
+	$('.gallery').each(function () {
+		$(this).magnificPopup({
+			delegate: 'a',
+			type: 'image',
+			gallery: {
+				enabled: true,
+				navigateByImgClick: true
+			},
+			fixedContentPos: false,
+			fixedBgPos: false,
+			removalDelay: 300,
+			mainClass: 'mfp-fade'
+		});
+	});
+
+
+	/* ==================== 11. Equal height ==================== */
+	/* Use the .equal class on a row if you want the columns to be equal in height */
+	$('.equal').children('.col').equalizeHeight();
+	$(window).resize( function() {
+		$('.equal').children('.col').equalizeHeight();
+		setTimeout( function() {
+			$('.equal').children('.col').equalizeHeight();
+		}, 100 );
+		setTimeout( function() {
+			$('.equal').children('.col').equalizeHeight();
+		}, 400 );
+		setTimeout( function() {
+			$('.equal').children('.col').equalizeHeight();
+		}, 1400 );
+		setTimeout( function() {
+			$('.equal').children('.col').equalizeHeight();
+		}, 2400 );
+	});
+	setTimeout( function() {
+		$(window).trigger('resize scroll');
+	}, 1000 );
+	setTimeout( function() {
+		$(window).trigger('resize scroll');
+	}, 3000 );
+	$(window).load( function() {
+		$('.equal').children('.col').equalizeHeight();
+		$( window ).trigger('resize scroll');
+		setTimeout( function() {
+			$('.equal').children('.col').equalizeHeight();
+		}, 1000 );
+		setTimeout( function() {
+			$('.equal').children('.col').equalizeHeight();
+		}, 1300 );
+	});
+
+
+	/* ==================== 12. fitVids ==================== */
+	$(".responsive-video").fitVids();
+
+
+	/* ==================== 13. BigText ==================== */
+	$('.bigtext').bigtext();
+	$(window).resize( function() {
+		$('.bigtext').bigtext();
+		setTimeout( function() {
+			$('.bigtext').bigtext();
+		}, 100 );
+		setTimeout( function() {
+			$('.bigtext').bigtext();
+		}, 400 );
+		setTimeout( function() {
+			$('.bigtext').bigtext();
+		}, 1400 );
+		setTimeout( function() {
+			$('.bigtext').bigtext();
+		}, 2400 );
+	});
+	setTimeout( function() {
+		$(window).trigger('resize scroll');
+	}, 1000 );
+	setTimeout( function() {
+		$(window).trigger('resize scroll');
+	}, 3000 );
+	$(window).load( function() {
+		$('.bigtext').bigtext();
+		$( window ).trigger('resize scroll');
+		setTimeout( function() {
+			$('.bigtext').bigtext();
+		}, 1000 );
+		setTimeout( function() {
+			$('.bigtext').bigtext();
+		}, 1300 );
+	});
+
+
+})(jQuery);

@@ -1,0 +1,15 @@
+jQuery(function($){
+	"use strict";
+	// Background and content slider
+	$('.bg-content-slider').superslides({
+		animation: 'fade' // Choose between 'fade' or 'slide'
+	});
+
+	// Fullscreen background slider
+	$('.bg-slider').superslides({
+		play: 5000, // 5 seconds between each slide
+		animation_speed: 1500, // 1.5 seconds transition speed
+		pagination: false, // Hiding the pagination bullets
+		animation: 'fade' // Choose between 'fade' or 'slide'
+	});
+});	

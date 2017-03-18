@@ -1,0 +1,913 @@
+/*
+
+	Blog.css
+
+	01. Blog
+	02. Comments
+	03. Comments form
+	04. Sidebar
+	05. Responsive settings
+
+*/
+
+
+/* ==================== 01. Blog ==================== */
+.blog {
+	padding-top: 120px;
+	padding-bottom: 120px;
+	background: #ffffff;
+}
+
+.post {
+	margin-bottom: 50px;
+}
+
+hr.post-divider {
+	width: 100%;
+	height: 1px;
+	background: #eeeeee;
+	margin-top: 75px;
+	margin-bottom: 75px;
+}
+
+/* Post media */
+.post-media {
+	margin-bottom: 35px;
+}
+
+.post-media img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: bottom;
+}
+
+/* Post title */
+.no-touch .post-title a:hover {
+	color: #f33233;
+}
+
+.post-title h1 {
+	font-size: 24px;
+}
+
+/* Post meta */
+.post-meta {
+	font-size: 13px;
+	color: #aaaaaa;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #eeeeee;
+	margin-bottom: 25px;
+}
+
+.post-meta a {
+	display: inline-block;
+	color: #aaaaaa;
+	text-decoration: none;
+	margin-right: 25px;
+}
+
+.no-touch .post-meta a:hover {
+	color: #f33233;
+}
+
+.post-meta a i {
+	font-size: 14px;
+	margin-right: 3px;
+}
+
+.post-meta.nb {
+	padding-bottom: 0;
+	border-bottom: 0;
+	margin-bottom: 0;
+	float: left;
+}
+
+/* Continue reading */
+.continue {
+	text-align: right;
+}
+
+.continue a {
+	color: #aaaaaa;
+}
+
+.no-touch .continue a:hover {
+	color: #f33233;
+}
+
+.continue a:after {
+	font-family: 'FontAwesome';
+	font-size: 14px;
+	content: '\f105';
+	margin-left: 7px;
+}
+
+/* Post body */
+.post-body img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: bottom;
+	margin-bottom: 25px;
+}
+
+.post-body a {
+	padding-bottom: 1px;
+	border-bottom: 1px dotted #cccccc;
+}
+
+.no-touch .post-body a:hover {
+	border-bottom: 1px dotted #111111;
+}
+
+/* Post lists */
+.post-body ol {
+	list-style-type: decimal-leading-zero;
+	list-style-position: outside;
+	margin-left: 2em;
+	margin-bottom: 25px;
+}
+
+.post-body ol ol,
+.post-body ul ol {
+	list-style-type: decimal-leading-zero;
+	list-style-position: outside;
+}
+
+.post-body ul {
+	list-style-type: disc;
+	list-style-position: outside;
+	margin-left: 1em;
+	margin-bottom: 25px;
+}
+
+.post-body ol ul,
+.post-body ul ul {
+	list-style-type: disc;
+	list-style-position: outside;
+}
+
+.post-body ol ol,
+.post-body ol ul,
+.post-body ul ol,
+.post-body ul ul {
+	margin-left: 2em;
+}
+
+/* Post code */
+.post pre {
+	background: #f7f7f7;
+	border: 1px solid #eeeeee;
+	padding: 0 20px 20px 20px;
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+.post pre code span {
+	color: black;
+}
+
+/* Tags */
+.tags {
+	margin-top: 25px;
+}
+
+.tags a,
+.tagcloud a {
+	display: inline-block;
+	font-size: 13px;
+	padding: 3px 10px 4px;
+	color: #aaaaaa;
+	background: none;
+	margin-bottom: 3px;
+	-webkit-border-radius: 3px;
+			border-radius: 3px;
+}
+
+.no-touch .tags a:hover,
+.no-touch .tagcloud a:hover {
+	color: #999999;
+	background: #f7f7f7;
+}
+
+/* Post link */
+.post-link {
+	display: table;
+	width: 100%;
+	background: #f7f7f7;
+	text-align: center;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	border-left: 50px solid #333333;
+}
+
+.post-link .fa {
+	display: block;
+	float: left;
+	color: #ffffff;
+	width: 50px;
+	font-size: 28px;
+	line-height: 50px;
+	vertical-align: middle;
+	margin-left: -50px;
+}
+
+.post-link a {
+	padding-right: 20px;
+	padding-left: 20px;
+	font-size: 18px;
+	font-weight: 700;
+	color: #111111;
+	-ms-word-break: break-all;
+		word-break: break-all;
+		word-break: break-word;
+    -webkit-hyphens: auto;
+       -moz-hyphens: auto;
+        -ms-hyphens: auto;
+            hyphens: auto;
+}
+
+.no-touch .post-link a:hover {
+	color: #f33233;
+}
+
+.post-link p {
+	padding-right: 20px;
+	padding-left: 20px;
+	line-height: 20px;
+	color: #aaaaaa;
+	font-style: italic;
+	margin-bottom: 0;
+}
+
+/* About the author */
+.about-author {
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+
+.about-author h3 {
+	font-size: 20px;
+}
+
+.about-author hr {
+	width: 100%;
+	height: 1px;
+	background: #eeeeee;
+	margin-top: 15px;
+	margin-bottom: 25px;
+}
+
+.author-avatar {
+	float: left;
+}
+
+.author-avatar img {
+	width: 128px;
+	height: 128px;
+	-webkit-border-radius: 64px;
+			border-radius: 64px;
+}
+
+.no-touch .author-avatar img {
+	border: 1px solid #eeeeee;
+	padding: 5px;
+}
+
+.author-info {
+	padding-left: 150px;
+}
+
+.author-info h3 {
+	font-size: 14px;
+}
+
+.author-info a {
+	padding-bottom: 1px;
+	border-bottom: 1px dotted #cccccc;
+}
+
+.no-touch .author-info a:hover {
+	border-bottom: 1px dotted #111111;
+}
+
+.ai-social a {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 18px;
+	color: #aaaaaa;
+	margin: 0 7px 0 -7px;
+	padding-bottom: 0;
+	border-bottom: none;
+}
+
+.no-touch .ai-social a:hover {
+	color: #333333;
+	border-bottom: none;
+}
+
+/* Pagination */
+.pagination {
+	position: relative;
+	font-size: 12px;
+	text-align: center;
+	clear: both;
+}
+
+.pagination span,
+.pagination a {
+	display: inline-block;
+	margin-bottom: 3px;
+	width: 40px;
+	height: 40px;
+	line-height: 39px;
+	font-size: 14px;
+	text-decoration: none;
+	color: #999999;
+	background: #ffffff;
+	border: 1px solid #ffffff;
+	-webkit-border-radius: 20px;
+			border-radius: 20px;
+}
+
+.no-touch .pagination a:hover {
+	color: #ffffff;
+	background: #f33233;
+	border: 1px solid #f33233;
+}
+
+.pagination .current {
+	color: #333333;
+	border: 1px solid #eeeeee;
+}
+
+
+/* ==================== 02. Comments ==================== */
+
+/* Comments title */
+.comments-title h3 {
+	font-size: 20px;
+}
+
+.comments-title hr {
+	width: 100%;
+	height: 1px;
+	background: #eeeeee;
+	margin-top: 15px;
+	margin-bottom: 25px;
+}
+
+.comments-title span {
+	color: #aaaaaa;
+	font-size: 13px;
+	font-weight: 400;
+}
+
+/* Commentslist */
+ul.commentlist {
+	margin-bottom: 100px;
+}
+
+/* Comment body */
+.comment-body {
+	margin-top: 35px;
+	margin-bottom: 50px;
+}
+
+.comment-body a {
+	padding-bottom: 1px;
+	border-bottom: 1px dotted #cccccc;
+}
+
+.no-touch .comment-body a:hover {
+	border-bottom: 1px dotted #111111;
+}
+
+/* Comment body child comments */
+ul.commentlist .children .comment-body {
+	background: #f7f7f7;
+	margin-left: 90px;
+	padding: 35px 25px 25px;
+}
+
+/* Name and avatar */
+.comment-author {
+	float: left;
+	margin-right: 15px;
+	width: 75px;
+	height: 75px;
+}
+
+.comment-author img {
+	margin-top: -5px;
+	max-width: 75px;
+	width: 100%;
+	height: auto;
+	-webkit-border-radius: 50%;
+			border-radius: 50%;
+}
+
+.fn {
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	color: #111111;
+}
+
+.fn a {
+	color: #111111;
+	text-decoration: none;
+}
+
+.comment-body span {
+	font-size: 13px;
+	color: #aaaaaa;
+}
+
+/* Comment meta */
+.comment-meta {
+	display: inline-block;
+	font-size: 10px;
+	text-transform: uppercase;
+	margin-left: 10px;
+	margin-bottom: 25px;
+}
+
+.comment-meta a {
+	color: #aaaaaa;
+	padding-bottom: 0;
+	border-bottom: 0;
+}
+
+.comment-meta a:hover {
+	color: #999999;
+	border-bottom: 0;
+}
+
+/* Comment content */
+.comment-content {
+	margin-left: 90px;
+}
+
+/* Reply link */
+.reply {
+	margin-left: 90px;
+}
+
+a.comment-reply-link {
+	font-size: 13px;
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 20px;
+	color: #aaaaaa;
+	border-bottom: 0;
+}
+
+.no-touch a.comment-reply-link:hover {
+	color: #111111;
+	border-bottom: 0;
+}
+
+a.comment-reply-link:before {
+	font-family: 'FontAwesome';
+	content: '\f122';
+	color: #cccccc;
+	margin-right: 7px;
+	-webkit-transition: all .2s;
+	   -moz-transition: all .2s;
+		-ms-transition: all .2s;
+		 -o-transition: all .2s;
+			transition: all .2s;
+}
+
+.no-touch a.comment-reply-link:hover:before {
+	color: #111111;
+	-webkit-transition: all .2s;
+	   -moz-transition: all .2s;
+		-ms-transition: all .2s;
+		 -o-transition: all .2s;
+			transition: all .2s;
+}
+
+/* Cancel reply link */
+h3 a.comment-reply-link {
+	color: #999999;
+}
+
+.no-touch h3 a.comment-reply-link:hover {
+	color: #111111;
+}
+
+
+/* ==================== 03. Comments form ==================== */
+
+/* General styling */
+.respondform h3 {
+	font-size: 20px;
+}
+
+.respondform hr {
+	width: 100%;
+	height: 1px;
+	background: #eeeeee;
+	margin-top: 15px;
+	margin-bottom: 25px;
+}
+
+.required {
+	color: red;
+}
+
+/* Form fields and textarea */
+.form-blog input.comment-input {
+	width: 50%;
+	float: left;
+	color: #333333;
+	border: 1px solid #dddddd;
+	margin-right: 15px;
+}
+
+.form-blog input.comment-input:focus {
+	color: #111111;
+	border: 1px solid #333333;
+}
+
+.form-blog textarea {
+	resize: none;
+	width: 100%;
+	height: 200px;
+	font-size: 100%;
+	color: #333333;
+	border: 1px solid #dddddd;
+}
+
+.form-blog textarea:focus {
+	color: #111111;
+	border: 1px solid #333333;
+}
+
+/* Form label */
+.form-blog label {
+	line-height: 50px;
+}
+
+.form-blog label:after {
+	clear: both;
+	content: '\0020';
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+
+/* ==================== 04. Sidebar ==================== */
+
+/* General styling */
+.sidebar {
+	margin-left: 40px;
+}
+
+/* Widgets general */
+.widget {
+	margin-bottom: 50px;
+}
+
+.widget h3 {
+	font-size: 14px;
+	color: #777777;
+	padding-bottom: 10px;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #eeeeee;
+}
+
+.widget img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: bottom;
+	margin-bottom: 0;
+}
+
+/* Widget archives */
+.widget_archive li {
+	display: block;
+	font-size: 13px;
+	color: #aaaaaa;
+	line-height: 25px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #eeeeee;
+}
+
+.widget_archive li a {
+	font-size: 13px;
+	color: #aaaaaa;
+}
+
+.no-touch .widget_archive li a:hover {
+	color: #111111;
+}
+
+/* Widget calendar */
+#wp-calendar {
+	width: 100%;
+}
+
+#wp-calendar caption {
+	font-family: 'Raleway', Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	font-weight: 700;
+	text-align: left;
+	line-height: 25px;
+	color: #777777;
+	margin-bottom: 10px;
+}
+
+#wp-calendar thead {
+	font-size: 10px;
+	text-align: center;
+}
+
+#wp-calendar thead th {
+	padding-bottom: 10px;
+}
+
+#wp-calendar tbody {
+	color: #aaaaaa;
+}
+
+#wp-calendar tbody td {
+	background: #fafafa;
+	border: 1px solid #ffffff;
+	text-align: center;
+	padding: 8px;
+}
+
+#wp-calendar #today {
+	background: #eeeeee;
+}
+
+.no-touch #wp-calendar tbody td:hover {
+	background: #ffffff;
+}
+
+#wp-calendar tbody .pad {
+	background: none;
+}
+
+#wp-calendar tfoot #next {
+	font-size: 11px;
+	text-transform: uppercase;
+	text-align: right;
+}
+
+#wp-calendar tfoot #prev {
+	font-size: 11px;
+	text-transform: uppercase;
+	padding-top: 10px;
+}
+
+/* Widget categories */
+li.cat-item {
+	display: block;
+	font-size: 13px;
+	color: #aaaaaa;
+	line-height: 25px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #eeeeee;
+}
+
+li.cat-item a {
+	font-size: 13px;
+	color: #aaaaaa;
+}
+
+.no-touch li.cat-item a:hover {
+	color: #111111;
+}
+
+/* Widget pages */
+.widget_pages ul.children li {
+	margin-left: 10px;
+}
+
+.widget_pages ul.children li:before {
+	content: '\2013';
+	color: #cccccc;
+	margin-left: -10px;
+	margin-right: 5px;
+}
+
+/* Widget recent comments */
+.widget_recent_comments li {
+	margin-top: 25px;
+	margin-bottom: 40px;
+}
+
+.widget_recent_comments li img {
+	float: left;
+	width: 75px;
+	height: 75px;
+	-webkit-border-radius: 50%;
+			border-radius: 50%;
+}
+
+.widget_recent_comments li span {
+	display: block;
+	margin-left: 90px;
+}
+
+.widget_recent_comments li em {
+	display: inline-block;
+	font-size: 11px;
+	font-style: normal;
+	color: #aaaaaa;
+	margin-right: 10px;
+}
+
+.widget_recent_comments li em i {
+	font-size: 14px;
+}
+
+.widget_recent_comments li:before,
+.widget_recent_comments li:after {
+	content:"";
+	display:table;
+}
+
+.widget_recent_comments li:after {
+	clear: both;
+}
+
+/* Widget recent post entries */
+.widget_recent_entries li {
+	margin-top: 25px;
+	margin-bottom: 40px;
+}
+
+.widget_recent_entries li img {
+	float: left;
+	width: 75px;
+	height: 75px;
+	-webkit-border-radius: 50%;
+			border-radius: 50%;
+}
+
+.widget_recent_entries li span {
+	display: block;
+	margin-left: 90px;
+}
+
+.widget_recent_entries li em {
+	display: inline-block;
+	font-size: 11px;
+	font-style: normal;
+	color: #aaaaaa;
+	margin-right: 10px;
+}
+
+.widget_recent_entries li em i {
+	font-size: 14px;
+}
+
+.widget_recent_entries li:before,
+.widget_recent_entries li:after {
+	content:"";
+	display:table;
+}
+
+.widget_recent_entries li:after {
+	clear: both;
+}
+
+/* Widget search */
+.widget_search input.search {
+	width: 100%;
+	font-family: inherit;
+	font-size: 13px;
+	background: #ffffff;
+	border: 1px solid #dddddd;
+	padding: 17px 15px;
+	-webkit-transition: all .2s;
+	   -moz-transition: all .2s;
+		-ms-transition: all .2s;
+		 -o-transition: all .2s;
+			transition: all .2s;
+}
+
+.widget_search input.search:focus {
+	color: #111111;
+	border: 1px solid #111111;
+	-webkit-transition: all .2s;
+	   -moz-transition: all .2s;
+		-ms-transition: all .2s;
+		 -o-transition: all .2s;
+			transition: all .2s;
+}
+
+.widget_search input[type="submit"] {
+	display: none;
+}
+
+
+/* ==================== 05. Responsive settings ==================== */
+@media only screen and (max-width: 1024px) {
+
+	.blog {
+		padding-top: 80px;
+		padding-bottom: 100px;
+	}
+
+	.continue {
+		display: inline-block;
+		text-align: left;
+	}
+
+	hr.post-divider {
+		margin-top: 40px;
+		margin-bottom: 50px;
+	}
+
+	.sidebar {
+		margin-left: 0;
+	}
+
+}
+
+@media only screen and (max-width: 768px) {
+
+	.blog {
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+
+	.post-media {
+		margin-bottom: 25px;
+	}
+
+	.post-meta a {
+		margin-right: 15px;
+	}
+
+	.post-meta.nb {
+		float: none;
+	}
+
+	.sidebar {
+		margin-top: 60px;
+	}
+
+}
+
+@media only screen and (max-width: 480px) {
+
+	.blog {
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+
+	hr.post-divider {
+		margin-top: 35px;
+		margin-bottom: 35px;
+	}
+
+	.post-meta a {
+		display: block;
+	}
+
+	.pagination span,
+	.pagination a {
+		width: 30px;
+		height: 30px;
+		line-height: 28px;
+		-webkit-border-radius: 15px;
+				border-radius: 15px;
+	}
+
+	.comment-meta {
+		display: block;
+		margin-left: 0;
+	}
+
+	ul.commentlist .children .comment-body {
+		margin-left: 0;
+		padding: 35px 15px 25px;
+	}
+
+	.form-blog input.comment-input {
+		width: 65%;
+	}
+
+	.sidebar {
+		margin-top: 40px;
+	}
+
+}
+#wp-calendar .calendarToday,.no-touch #wp-calendar tbody td.calendarToday:hover {
+	background: #f33233;
+	color:#fff;
+}
