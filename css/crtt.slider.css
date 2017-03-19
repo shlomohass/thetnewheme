@@ -1,0 +1,31 @@
+ul.crtt-slider {
+    position:relative;
+    list-style: none;
+    margin: 0;
+	padding: 0;
+	border: 0;
+    height:100%;
+    background-color: #303030;
+}
+ul.crtt-slider > li {
+    position:absolute;
+    display:block;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center center;
+    z-index : 2;
+    opacity:1;
+    -webkit-transition: opacity .9s ease-in-out;
+    -moz-transition: opacity .9s ease-in-out;
+    -ms-transition: opacity .9s ease-in-out;
+    -o-transition: opacity .9s ease-in-out;
+    transition: opacity .9s ease-in-out;
+}
+ul.crtt-slider > li.hideSlide {
+    opacity : 0;
+    z-index : 1;
+}
