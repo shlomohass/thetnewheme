@@ -8,9 +8,11 @@
 /*	5. Grid
 /*	6. Positioning
 /*  7. Bigtext
+/*  8. Styels
 /**************************************************/
 
 
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Pavanam');
 
 
 /**************************************************/
@@ -27,7 +29,9 @@ html { font-size: 1em; -webkit-text-size-adjust: 1em; -ms-text-size-adjust: 1em;
 body { vertical-align: baseline; }
 html, button, input, select, textarea { font-family: inherit; }
 
-
+* {
+    font-family: 'Pavanam', sans-serif;
+}
 
 /**************************************************/
 /** 02. Basic  ************************************/
@@ -622,10 +626,36 @@ vertical-align: bottom;
 /**************************************************/
 
 .bigtext {
-    font-family: Helvetica, Arial;
+    font-family: 'Alegreya Sans SC', sans-serif;
 }
 .bigtext > div {
-    line-height: 0.95em;
+    line-height: 1.1em;
+    font-family: 'Alegreya Sans SC', sans-serif;
 }
 .bigtext * { white-space: nowrap; } .bigtext > * { display: block; }
 .bigtext .bigtext-exempt, .bigtext .bigtext-exempt * { white-space: normal; }
+
+/**************************************************/
+/** 08. Styels  **********************************/
+/**************************************************/
+
+.text-white { color:white; }
+.text-blue  { color:#2d5bff; }
+.text-black { color:black; }
+.text-red   { color: red; }
+.text-grey  { color:grey; }
+.text-yellow { color:yellow; }
+.text-green { color:seagreen; }
+.text-purple { color:purple; }
+.text-orange { color:orange; }
+
+.text-upp { text-transform: uppercase;    }
+.text-low { text-transform: lowercase;    }
+.text-cap { text-transform: capitalize;   }
+
+.text-bold { font-weight: bold;    }
+.text-normal { font-weight: normal;    }
+.text-lighter { font-weight: lighter;    }
+.text-bolder { font-weight: bolder;    }
+
+.text-shadow { text-shadow: 1px 1px 1px #4a4a4a; }

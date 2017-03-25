@@ -29,3 +29,123 @@ ul.crtt-slider > li.hideSlide {
     opacity : 0;
     z-index : 1;
 }
+ul.crtt-slider > li.crtt-slide-overlay {
+    z-index : 3;
+}
+ul.crtt-slider > li.crtt-controls {
+    z-index : 4;
+    top: auto;
+}
+ul.crtt-slider > li.crtt-controls > div.crtt-controls-pages {
+    text-align: center;
+    padding:40px 0px;
+}
+ul.crtt-slider > li.crtt-controls > div.crtt-controls-pages > div.crtt-controls-page {
+    border-radius:50%;
+    margin:8px;
+    padding:3px;
+    display:inline-block;
+    cursor: pointer;
+    -webkit-transition: background-color 600ms ease;
+    -moz-transition: background-color 600ms ease;
+    -ms-transition: background-color 600ms ease;
+    -o-transition: background-color 600ms ease;
+    transition: background-color 600ms ease;
+}
+ul.crtt-slider > li.crtt-controls > div.crtt-controls-pages > div.crtt-controls-page.crtt-cur {
+    -webkit-transform: scale(1.6);
+    -moz-transform: scale(1.6);
+    -ms-transform: scale(1.6);
+    -o-transform: scale(1.6);
+    transform: scale(1.6);
+    -webkit-transition: transform 600ms ease;
+    -moz-transition: transform 600ms ease;
+    -ms-transition: transform 600ms ease;
+    -o-transition: transform 600ms ease;
+    transition: transform 600ms ease;
+}
+ul.crtt-slider > li.crtt-controls > div.crtt-controls-pages > div.crtt-controls-play {
+    position: relative;
+    display:inline-block;
+    cursor: pointer;
+    padding:3px;
+    margin:8px;
+    margin-left:10px;
+}
+ul.crtt-slider > li.crtt-controls > div.crtt-controls-pages > div.crtt-controls-play.crtt-pause:before,
+ul.crtt-slider > li.crtt-controls > div.crtt-controls-pages > div.crtt-controls-play:before {
+    content: "\f04b";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    font-size: 18px;
+    position: absolute;
+    top: -5px;
+}
+ul.crtt-slider > li.crtt-controls > div.crtt-controls-pages > div.crtt-controls-play.crtt-pause:before {
+    content: "\f04c";
+}
+
+transform: scale(2.4);
+ul.crtt-slider > li.crtt-controls div.crtt-controls-down {
+    background-color: aqua;
+}
+ul.crtt-slider > li.crtt-slide-header {
+    z-index : 5;
+    text-align: center;
+    display: table;
+    height:90%;
+    width:100%;
+}
+ul.crtt-slider > li.crtt-slide-header div.bigtext {
+    padding-left:30%;
+    padding-right:30%;
+    margin: 0 auto;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/* Responsive utilities */
+@media only screen and (min-width: 1025px) {
+
+}
+
+@media only screen and (max-width: 1024px) {
+    ul.crtt-slider > li.crtt-slide-header {
+        height:100%;
+    }
+    ul.crtt-slider > li.crtt-slide-header div.bigtext {
+        padding-left:10%;
+        padding-right:10%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 480px) {
+    ul.crtt-slider > li.crtt-slide-header {
+        height:100%;
+        width:90%;
+        margin: 0 auto;
+    }
+    ul.crtt-slider > li.crtt-slide-header div.bigtext {
+        padding-left:0%;
+        padding-right:0%;
+
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    ul.crtt-slider > li.crtt-slide-header {
+        height:100%;
+        width:90%;
+        margin: 0 auto;
+    }
+    ul.crtt-slider > li.crtt-slide-header div.bigtext {
+        padding-left:0%;
+        padding-right:0%;
+    }
+}
