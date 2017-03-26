@@ -79,9 +79,9 @@ ul.crtt-slider > li.crtt-controls > div.crtt-controls-pages > div.crtt-controls-
     font-style: normal;
     font-weight: normal;
     text-decoration: inherit;
-    font-size: 18px;
+    font-size: 13px;
     position: absolute;
-    top: -5px;
+    top: -3px;
 }
 ul.crtt-slider > li.crtt-controls > div.crtt-controls-pages > div.crtt-controls-play.crtt-pause:before {
     content: "\f04c";

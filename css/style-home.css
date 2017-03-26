@@ -1,7 +1,144 @@
 
+/**************************************************/
+/** 01. Sections  *********************************/
+/**************************************************/
+
 .crtt-sec {
     width:100%;
 }
+.crtt-sec.crtt-content {
+    color: #494949;
+    font-size: 18px;
+    font-family: 'Pavanam', sans-serif; 
+    padding:60px 0px;
+    line-height: 1.3em;
+}
 .crtt-fitscreen {
     height:100vh;   
+}
+
+/**************************************************/
+/** 02. Headers  **********************************/
+/**************************************************/
+
+.crtt-content .crtt-sec-header {
+    text-align: center;
+}
+.crtt-content .crtt-sec-header > span {
+    font-family: 'Alegreya Sans SC', sans-serif; 
+    text-transform: uppercase;
+    color:orange;
+    font-weight:400;
+    letter-spacing: 2px;
+    font-size: 1em;
+}
+.crtt-content .crtt-sec-header > h1 {
+    font-family: 'Alegreya Sans SC', sans-serif; 
+    text-transform: uppercase;
+    font-size: 2.0em;
+    font-weight:800;
+    letter-spacing: 2px;
+    padding:15px 0px 20px 0px;
+    position: relative;
+    margin-bottom: 30px;
+}
+.crtt-content .crtt-sec-header > h1:before {
+    width:50px;
+    background-color: #494949;
+    height:2px;
+    position:absolute;
+    bottom: 0;
+    content:"";
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.crtt-content .crtt-par-text {
+    text-align: center;
+    margin:30px;
+}
+/**************************************************/
+/** 03. Link & buttons ****************************/
+/**************************************************/
+.crtt-content .light-but-link,
+.crtt-content .light-but-link:active,
+.crtt-content .light-but-link:visited,
+.crtt-content .light-but-link:link {
+    transform:uppercase;
+    color:#8e8e8e;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9em;
+    -webkit-transition: color .3s ease;
+    -moz-transition: color .3s ease;
+    -ms-transition: color .3s ease;
+    -o-transition: color .3s ease;
+    transition: color .3s ease;
+    position: relative;
+}
+.crtt-content .light-but-link:before {
+    content:"";
+    background-color: rgba(255, 172, 22, 0.46);;
+    padding: 4px;
+    border-radius: 50%;
+    left: -14px;
+    top: 7px;
+    position: absolute;
+    -webkit-transition: background-color .3s ease;
+    -moz-transition: background-color .3s ease;
+    -ms-transition: background-color .3s ease;
+    -o-transition: background-color .3s ease;
+    transition: background-color .3s ease;
+}
+.crtt-content .light-but-link:hover {
+    color:#494949;
+}
+.crtt-content .light-but-link:hover:before {
+    background-color: rgba(255, 172, 22, 0.86);
+}
+/**************************************************/
+/** 04. Simple Box  *******************************/
+/**************************************************/
+
+.crtt-simple-box-container {
+    margin-top: 80px;
+    height: 260px;
+    position: relative;
+}
+.crtt-simple-box-container .crtt-box {
+    text-align: center;
+    border-right:1px solid #e0e0e0;
+    height:100%;
+}
+.crtt-simple-box-container .crtt-box:last-child {
+    border-right:0;
+}
+.crtt-simple-box-container .crtt-box .crtt-box-icon {
+    font-size: 3em;
+}
+.crtt-simple-box-container .crtt-box .crtt-box-icon:hover {
+    color:orange;
+    -webkit-transition: color .3s ease;
+    -moz-transition: color .3s ease;
+    -ms-transition: color .3s ease;
+    -o-transition: color .3s ease;
+    transition: color .3s ease;
+}
+.crtt-simple-box-container .crtt-box > h3 {
+    font-weight: 600;
+    text-align: left;
+    font-size:1.3em;
+    margin:35px 0px 10px 0px;
+    position:relative;
+}
+.crtt-simple-box-container .crtt-box > h3:before {
+    width:50%;
+    background-color: orange;
+    height:2px;
+    position:absolute;
+    bottom: -5px;
+    content:"";
+    left : 0;
+}
+.crtt-simple-box-container .crtt-box > p {
+    text-align: left;
 }

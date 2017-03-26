@@ -113,7 +113,7 @@ jQuery(function() {
             size         : 50,
             startAt      : 0,
             delay        : 2, //sec
-            start        : true,
+            start        : false,
             overlay      : "rgba(0,0,0,.15)",
             showPages    : true,
             showControls : true,
