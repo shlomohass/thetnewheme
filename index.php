@@ -15,7 +15,7 @@
         <!-- JavaScript Includes -->
         <script src="js/modernizr.js" type="text/javascript"></script>
         <script src="js/modtests.js" type="text/javascript"></script>
-        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+        <script src="js/jquery-1.12.4.min.js"></script>
         <script src="js/jquery-noconflict.js" type="text/javascript"></script>
         
         <!-- Favicons --> 
@@ -38,6 +38,7 @@
         <!-- StyleSheets Includes -->
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/crtt.slider.css" />
+        <link rel="stylesheet" href="css/crtt.gallery.css" />
         <link rel="stylesheet" href="css/style-home.css" />
 	
 <!--[if lt IE 9]>
@@ -58,6 +59,7 @@
 <!-- JavaScript Includes -->
 <script src="js/bigtext.js" type="text/javascript"></script>
 <script src="js/retina.min.js" type="text/javascript"></script>
+<script src="js/isotope.js" type="text/javascript"></script>
 <script src="js/main.js" type="text/javascript"></script>
 <!--
 <script src="./Home_files/jquery.sticky.js.download"></script>

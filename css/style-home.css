@@ -10,13 +10,14 @@
     color: #494949;
     font-size: 18px;
     font-family: 'Pavanam', sans-serif; 
-    padding:60px 0px;
+    padding:75px 0px;
     line-height: 1.3em;
 }
 .crtt-fitscreen {
     height:100vh;   
 }
 
+#sec-services {  background: #fafafa; }
 /**************************************************/
 /** 02. Headers  **********************************/
 /**************************************************/
@@ -101,7 +102,7 @@
 
 .crtt-simple-box-container {
     margin-top: 80px;
-    height: 260px;
+    height: 285px;
     position: relative;
 }
 .crtt-simple-box-container .crtt-box {
@@ -124,16 +125,17 @@
     transition: color .3s ease;
 }
 .crtt-simple-box-container .crtt-box > h3 {
-    font-weight: 600;
+    font-weight: 400;
     text-align: left;
     font-size:1.3em;
     margin:35px 0px 10px 0px;
     position:relative;
+    text-shadow: 0px 0px 0px #494949;
 }
 .crtt-simple-box-container .crtt-box > h3:before {
     width:50%;
     background-color: orange;
-    height:2px;
+    height:1px;
     position:absolute;
     bottom: -5px;
     content:"";
@@ -141,4 +143,66 @@
 }
 .crtt-simple-box-container .crtt-box > p {
     text-align: left;
+    font-size: 0.9em;
+    padding-top: 10px;
+}
+/**************************************************/
+/** 04. Cards  ************************************/
+/**************************************************/
+.crtt-cards {
+    border-top:1px solid #e0e0e0;
+}
+.crtt-cards > div {
+    padding: 55px 30px 70px 30px;
+    border-right:1px solid #e0e0e0;
+    border-bottom:1px solid #e0e0e0;
+}
+.crtt-cards > div .card-header {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.crtt-cards > div .card-header .crtt-box-icon {
+    font-size: 28px;
+    color: #6f6f6f;
+}
+.crtt-cards > div .card-header h4 {
+    display: inline-block;
+    vertical-align: sub;
+    padding-left: 7px;
+    font-weight: bold;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+.crtt-cards > div p {
+    font-size: 0.9em;
+}
+.crtt-cards > div .learn-but-link,
+.crtt-cards > div .learn-but-link:active,
+.crtt-cards > div .learn-but-link:visited,
+.crtt-cards > div .learn-but-link:link {
+    display: block;
+    width:100%;
+    text-transform:uppercase;
+    color:#333333;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.7em;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+    -webkit-transition-property: color, background-color;
+    -moz-transition-property: color, background-color;
+    -ms-transition-property: color, background-color;
+    -o-transition-property: color, background-color;
+    transition-property: color, background-color;
+    position: absolute;
+    bottom:0;
+    left:0;
+    text-align: center;
+}
+.crtt-cards > div .learn-but-link:hover {
+    background-color: #ffb939;
+    color: white;
 }

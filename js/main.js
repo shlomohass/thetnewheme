@@ -16,18 +16,28 @@ jQuery(function() {
         this.$ele = $(element);
         this.options = options;
         this.metadata = this.$ele.data('options');
-        
+        this.engine = {
+          maxele   : 0,
+          curele   : 0,
+          header   : null,
+          overlay  : null,
+          controls : null, 
+          timer    : null,
+          pause    : false
+        };
     }
+    
     //Private methods:
     var _set = function() {
         var inst = this;
-
+        
         //Set the width:
         if (inst.config.size > -1 && inst.config.size < 101) {
             inst.$ele.css("width", "" + inst.config.size + "%");
         }
 
         //Set Li's:
+        console.log(inst.engine);
         inst.$ele.children('li').not(".crtt-slide-header").each(function(i,e) {
             var $e = $(e);
             if (i !== inst.config.startAt) {
@@ -47,7 +57,7 @@ jQuery(function() {
         }
         
         //Set controls - pages:
-        inst.engine.controls = $("<li class='crtt-controls'><div class='crtt-controls-pages'></div><div class='crtt-controls-down'>q</div></li>");
+        inst.engine.controls = $("<li class='crtt-controls crtt-" + inst.config.controlsSize + "'><div class='crtt-controls-pages'></div><div class='crtt-controls-down'></div></li>");
         inst.$ele.append(inst.engine.controls);
         if (inst.config.showPages) {
             for (var i = 0; i < inst.engine.maxele; i++) {
@@ -117,17 +127,9 @@ jQuery(function() {
             overlay      : "rgba(0,0,0,.15)",
             showPages    : true,
             showControls : true,
+            controlsSize : "medium", //small, medium, large
             pageDown     : true,
             controlsColor : ["#ffffff","#ff9238"], //Normal, Hover/Active
-        },
-        engine : {
-          maxele   : 0,
-          curele   : 0,
-          header   : null,
-          overlay  : null,
-          controls : null, 
-          timer    : null,
-          pause    : false
         },
         init: function() {
             this.config = $.extend({}, this.defaults, this.options, this.metadata);
@@ -235,22 +237,209 @@ jQuery(function() {
     
     $.fn.crttSlider = function(opt) {
         var options = opt || {};
-        return this.each(function() {
-            var inst = new CrttSlider(this, options).init();
-            $(this).data("crttSlider", inst);
+        this.each(function(index, ele) {
+            var inst = new CrttSlider(ele, options).init();
+            $(ele).data("crttSlider", inst);
+        });
+    };
+    
+}(jQuery, window, document));
+
+/********************** 1. crtt-gallery ***********************/
+;(function($, window, document, undefined) {
+
+    // constructor
+    var CrttGal = function( element, options ) {
+        this.ele = element;
+        this.$ele = $(element);
+        this.$shower = null;
+        this.options = options;
+        this.metadata = this.$ele.data('options');
+        this.model = [];
+    }
+    
+    //Private methods:
+    var _set = function() {
+        var inst = this;
+        
+        //Add the display:
+        _addDisplay.call(inst);
+        
+        //Loop Set:
+        inst.$ele.find("li > div.img").each(function(index, ele) {
+            
+            //Set Images:
+            $(ele).css({ "backgroundImage" : "url(" + $(ele).data("src") + ")" });
+
+            //Set Overlays:
+            var icon = $(ele).data("trigger");
+            if (icon == "video" || icon == "link" || icon == "image") { icon = icon; } else { icon = ""; }
+            $(ele).append(
+                $("<div class='crtt-gal-overlay " + icon + "' />").click(function() {
+                    var $this = $(this);
+                    $(this).closest(".crtt-gallery").data("crttgal").show($this);
+                })
+            );
+            
+        });
+        
+    };
+    
+    var _addDisplay = function() {
+        var inst = this;
+        var $dis = $(
+            "<div class='crtt-gal-display-wrapper'>" + 
+                "<div class='crtt-gal-display'>" +
+                    "<img class='cell-one' src='' />" +
+                    "<img class='cell-two' src='' style='display:none;' />" +
+                    "<div class='crtt-gal-cont-left'><span class='flaticon-play-button'></span></div>" +
+                    "<div class='crtt-gal-cont-right'><span class='flaticon-play-button'></span></div>" +
+                    "<div class='crtt-gal-cont-close'><span class='flaticon-error'></span></div>" +
+                "</div>" +
+            "</div>"
+        );
+        $("body").append($dis);
+        inst.$shower = $dis;
+        $dis.find(".crtt-gal-cont-close").click(function(){ 
+            inst.close();
+        });
+        $dis.find(".crtt-gal-cont-left").click(function(){ 
+            inst.slideLeft();
+        });
+        $dis.find(".crtt-gal-cont-right").click(function(){ 
+            inst.slideRight();
+        });
+    };
+    //The proto:
+    CrttGal.prototype = {
+
+        defaults : {
+        },
+        init: function() {
+            this.config = $.extend({}, this.defaults, this.options, this.metadata);
+            _set.call(this);
+            return this;
+        },
+        show: function($e) {
+            
+            var $ele = $e.closest("div.img");        
+            var $row = $ele.closest("li"),
+                mul = this.hasMul(),
+                src = $ele.data("src"),
+                meta = $ele.data("meta");
+            
+            if ($ele.data("trigger") == "image") {
+                this.navsDisplay(mul);
+                this.buildModel();
+                this.$ele.find("li").not($row).removeClass("scrtt-showing");
+                $row.addClass("scrtt-showing");
+                this.setShowerMain(src);
+                this.$shower.fadeIn();
+            }
+        },
+        close: function() {
+            this.$ele.find("li").removeClass("scrtt-showing");
+            this.$shower.fadeOut();
+        },
+        hasMul: function() {
+            return this.$ele.find("[data-trigger='video'], [data-trigger='image']").length > 1
+        },
+        buildModel : function() {
+            var $all = this.$ele.find("[data-trigger='video'], [data-trigger='image']");
+            var inst = this;
+            inst.model = [];
+            if ($all.length < 2) return;
+            $all.each(function(index, ele){
+                $(ele).data("tab", index);
+                inst.model.push(ele);
+            });
+        },
+        navsDisplay : function(show) {
+            if (show)
+                this.$shower.find(".crtt-gal-cont-right, .crtt-gal-cont-left").show();
+            else 
+                this.$shower.find(".crtt-gal-cont-right, .crtt-gal-cont-left").hide();
+        },
+        setShowerMain: function(img) {
+            var $one = this.$shower.find(".cell-one").eq(0),
+                $two = this.$shower.find(".cell-two").eq(0).hide();
+                $one.attr("src", img);
+        },
+        slideRight: function() {
+            //All needed:
+            var $one = this.$shower.find(".cell-one").eq(0),
+                $two = this.$shower.find(".cell-two").eq(0),
+                $cur = this.$ele.find(".scrtt-showing"),
+                $all = this.$ele.find("[data-trigger='video'], [data-trigger='image']");
+            if (this.model.length > 1) {
+                var tab = $cur.children("div").data("tab");
+                var $next;
+                //Get the next:
+                if (tab + 1 < this.model.length) { $next = $(this.model[tab + 1]); } else { $next = $(this.model[0]); }
+                //Toggle:
+                console.log(tab, $next);
+                if ($one.is(":visible")) {
+                       $two.attr("src", $next.data("src")); 
+                       $two.fadeIn();
+                       $one.fadeOut();
+                } else {
+                       $one.attr("src", $next.data("src"));
+                       $one.fadeIn();
+                       $two.fadeOut();
+                }
+            }
+        },
+        slideLeft: function() {
+            var $one = this.$shower.find(".cell-one").eq(0),
+                $two = this.$shower.find(".cell-two").eq(0).hide();
+            $one.attr("src", img);
+        }
+    };
+    
+    CrttGal.defaults = CrttGal.prototype.defaults;
+    
+    $.fn.crttGal = function(opt) {
+        var options = opt || {};
+        this.each(function(index, ele) {
+            var inst = new CrttGal(ele, options).init();
+            $(ele).data("crttgal", inst);
         });
     };
     
 }(jQuery, window, document));
 
 
+/********************** 1. FitHeight *************************/
+jQuery(function($){
+    
+    setTimeout(function(){
+        $("[data-fitheight]").each(function(inde, ele){
+            var $ele = $(ele);
+            var to = $ele.data('fitheight');
+            var target;
+            if (to != null) {
+                target = $ele.closest(to);
+            } else {
+                target = $ele.parent();
+            }
+            $ele.css("height",target.height());
+        });
+    },500);
+});
 /********************** 1. Main *************************/
 jQuery(function($){
     
-    $("ul.crtt-slider").crttSlider();
-    console.log($("ul.crtt-slider").data("crttSlider"));
+    $("ul.crtt-main-slider").crttSlider();   
+    $("ul.crtt-gallery").crttGal();  
+    
+    //Delaye for the fit to kick in:
+    setTimeout(function(){ 
+        $("ul.crtt-work-slider").crttSlider();    
+    },600);
     
 });
+
+
 /********************** 1. bigText ***********************/
 ;(function($){
     

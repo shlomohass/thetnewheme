@@ -32,6 +32,9 @@ ul.crtt-slider > li.hideSlide {
 ul.crtt-slider > li.crtt-slide-overlay {
     z-index : 3;
 }
+/*****************************************************
+Controls:
+******************************************************/
 ul.crtt-slider > li.crtt-controls {
     z-index : 4;
     top: auto;
@@ -39,6 +42,12 @@ ul.crtt-slider > li.crtt-controls {
 ul.crtt-slider > li.crtt-controls > div.crtt-controls-pages {
     text-align: center;
     padding:40px 0px;
+}
+ul.crtt-slider > li.crtt-controls.crtt-small > div.crtt-controls-pages {
+    padding:15px 0px;
+}
+ul.crtt-slider > li.crtt-controls.crtt-large > div.crtt-controls-pages {
+    padding:60px 0px;
 }
 ul.crtt-slider > li.crtt-controls > div.crtt-controls-pages > div.crtt-controls-page {
     border-radius:50%;
@@ -51,6 +60,14 @@ ul.crtt-slider > li.crtt-controls > div.crtt-controls-pages > div.crtt-controls-
     -ms-transition: background-color 600ms ease;
     -o-transition: background-color 600ms ease;
     transition: background-color 600ms ease;
+}
+ul.crtt-slider > li.crtt-controls.crtt-small > div.crtt-controls-pages > div.crtt-controls-page {
+    padding:2px;
+    margin:6px;
+}
+ul.crtt-slider > li.crtt-controls.crtt-large > div.crtt-controls-pages > div.crtt-controls-page {
+    padding:4px;
+    margin:10px;
 }
 ul.crtt-slider > li.crtt-controls > div.crtt-controls-pages > div.crtt-controls-page.crtt-cur {
     -webkit-transform: scale(1.6);
@@ -86,8 +103,16 @@ ul.crtt-slider > li.crtt-controls > div.crtt-controls-pages > div.crtt-controls-
 ul.crtt-slider > li.crtt-controls > div.crtt-controls-pages > div.crtt-controls-play.crtt-pause:before {
     content: "\f04c";
 }
-
-transform: scale(2.4);
+ul.crtt-slider > li.crtt-controls.crtt-small > div.crtt-controls-pages > div.crtt-controls-play.crtt-pause:before,
+ul.crtt-slider > li.crtt-controls.crtt-small > div.crtt-controls-pages > div.crtt-controls-play:before {
+    font-size: 10px;
+    top: 0px;
+}
+ul.crtt-slider > li.crtt-controls.crtt-large > div.crtt-controls-pages > div.crtt-controls-play.crtt-pause:before,
+ul.crtt-slider > li.crtt-controls.crtt-large > div.crtt-controls-pages > div.crtt-controls-play:before {
+    font-size: 15px;
+    top: -7px;
+}
 ul.crtt-slider > li.crtt-controls div.crtt-controls-down {
     background-color: aqua;
 }

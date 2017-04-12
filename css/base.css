@@ -19,7 +19,7 @@
 /** 01. Reset *************************************/
 /**************************************************/
 html, body { height: 100%; min-height: 100%; }
-body { overflow-x: hidden; padding: 0; }
+body { overflow-x: hidden; padding: 0; position: relative; }
 body{ -webkit-animation: bugfix infinite 1s; }
 @-webkit-keyframes bugfix { from {padding:0;} to {padding:0;} }
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
@@ -592,7 +592,11 @@ vertical-align: bottom;
 }
 
 
-
+.full-container.row {
+    width:100%;
+    margin:0;
+    padding:0;
+}
 
 
 /**************************************************/
@@ -615,9 +619,24 @@ vertical-align: bottom;
 .pull-up-right { position: absolute; top:0; right:0; }
 
 .m0 { margin: 0 }
+.m5 { margin: 5px; }
+.m10 { margin: 10px; }
+.m15 { margin: 15px; }
+.m20 { margin: 20px; }
+.m25 { margin: 25px; }
 .mt0 { margin-top: 0 }
 .mb0 { margin-bottom: 0 }
 .ms0 { margin-right: 0; margin-left: 0 }
+
+.mtb10 { margin-top: 10px; margin-bottom: 10px; }
+.mtb15 {  margin-top: 15px; margin-bottom: 15px; }
+.mtb20 {  margin-top: 20px; margin-bottom: 20px; }
+.mtb25 {  margin-top: 25px; margin-bottom: 25px; }
+
+.mtbi10 { margin-top: 10px !important; margin-bottom: 10px !important; }
+.mtbi15 {  margin-top: 15px !important; margin-bottom: 15px !important; }
+.mtbi20 {  margin-top: 20px !important; margin-bottom: 20px !important; }
+.mtbi25 {  margin-top: 25px !important; margin-bottom: 25px !important; }
 
 .mr0 { margin-right: 0; }
 .mr5 { margin-right: 5px; }
@@ -631,6 +650,12 @@ vertical-align: bottom;
 .ml25 { margin-left: 25px; }
 
 .p0 { padding: 0 }
+.p5 { padding: 5px; }
+.p10 { padding: 10px; }
+.p15 { padding: 15px; }
+.p20 { padding: 20px; }
+.p25 { padding: 25px; }
+
 .pt0 { padding-top: 0 }
 .pb0 { padding-bottom: 0 }
 .ps0 { padding-right: 0; padding-left: 0 }
